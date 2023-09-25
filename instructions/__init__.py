@@ -218,7 +218,7 @@ class Scenario1(Page):
             errors.append('scenario_1_allshire_meet_target')
         if values['scenario_1_westville_meet_target'] != True:
             errors.append('scenario_1_westville_meet_target')
-        if values['scenario_1_how_many_coins'] != 2.5:
+        if values['scenario_1_how_many_coins'] != gameConstants.LOCAL_REWARD + 1:
             errors.append('scenario_1_how_many_coins')
 
         if len(errors) > 0:

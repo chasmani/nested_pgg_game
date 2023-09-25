@@ -2,7 +2,7 @@
 
 This is the code for a behavioural experiment where people play nested threshold public goods games. 
 
-There are three experiemntal conditions:
+There are three experimental conditions:
 - Balanced. Set `C.GLOBAL_REWARD=2` in `game/__init__.py`.
 - GlobalBoost. Set `C.GLOBAL_REWARD=2.5` in `game/__init__.py`.
 - GlobalOnly. Switch to the branch `GlobalOnly`.

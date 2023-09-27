@@ -50,7 +50,7 @@ class C(BaseConstants):
     LOCAL_THRESHOLD = 2
     GLOBAL_THRESHOLD = 4
     LOCAL_REWARD = 2
-    GLOBAL_REWARD = 2.5
+    GLOBAL_REWARD = 2
     ENDOWMENT = 1
     TIME_OUT = 30
     GROUPING_TIME_OUT = 480
@@ -73,8 +73,6 @@ class Player(BasePlayer):
         label="You are given 1 coin, what would you like to do?",
         choices=[
             ['global', 'Invest in Allshire'],
-            ['local', 'Invest in Westville'],
-            ['other', 'Invest in Eastburgh'],
             ['self', 'Keep the coin'],
         ],
         widget=widgets.RadioSelect,

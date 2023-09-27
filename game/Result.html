@@ -37,12 +37,6 @@
           <span class="big-group">Allshire</span>: {{ player.global_group_contributions }} players invested. 
         </li>
         <li>
-          <span class="my-small-group">Westville</span>: {{ player.local_group_contributions }} players invested. 
-        </li>
-        <li>
-          <span class="other-small-group">Eastburgh</span>: {{ player.other_group_contributions }} players invested. 
-        </li>
-        <li>
            <strong>Kept the coin</strong>: {{ player.kept_group_contributions }} players.
         </li>
         
@@ -88,59 +82,6 @@
         </td>
       
   
-    </tr>
-    <tr class="my-small-group">
-      <td>Westville</td>
-      <td>At least 2 players</td>
-      <td>+ {{ local_reward }} coins for ALL Westville players</td>
-      <td>
-
-        {% for class in local_results_classes %}
-          {% if class == "full" %}
-             <span class="dot bg-my-small-group"></span>
-          {% elif class == "empty" %}
-              <span class="dot bg-empty"></span>
-          {% elif class == "threshold" %}
-            <span class="target-line bg-my-small-group"></span>
-          {% endif %}
-        {% endfor %}
-      </td>
-
-      <td>
-
-          {% if player.local_threshold_met %}
-            <i class="glyphicon glyphicon-ok"></i>+ {{ local_reward }} coins (Westville)
-          {% else %}
-            <i class="glyphicon glyphicon-remove"></i>+ 0 coins
-          {% endif %}
-      </td>
-    </tr>
-
-    <tr class="other-small-group">
-      <td>Eastburgh</td>
-      <td>At least 2 players</td>
-      <td>+ {{ local_reward }} coins for ALL Eastburgh players</td>
-      <td>
-
-        {% for class in other_results_classes %}
-          {% if class == "full" %}
-             <span class="dot bg-other-small-group"></span>
-          {% elif class == "empty" %}
-              <span class="dot bg-empty"></span>
-          {% elif class == "threshold" %}
-            <span class="target-line bg-other-small-group"></span>
-          {% endif %}
-        {% endfor %}
-      </td>
-
-      <td>
-
-          {% if player.other_threshold_met %}
-            <i class="glyphicon glyphicon-ok"></i>+ 0 coins for YOU (Eastburgh only)
-          {% else %}
-            <i class="glyphicon glyphicon-remove"></i>+ 0 coins
-          {% endif %}
-      </td>
     </tr>
 
     <tr>

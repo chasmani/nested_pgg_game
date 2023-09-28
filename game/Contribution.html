@@ -38,8 +38,8 @@
         <div class="row">
           <h3>Round History - Group Totals</h3>
 
-          <p>Dotted lines are the group bonus thresholds.</p>
-          <div class="col-md-3">
+          <p>Dotted line is the group bonus threshold.</p>
+          <div class="col-md-6">
 
             <h4><span class="big-group">Allshire</span></h4>
             <script
@@ -101,126 +101,8 @@
 
           </div>
 
-          <div class="col-md-3">
 
-            <h4><span class="my-small-group">Westville</span></h4>
-            
-            <canvas id="localChart" style="width:100%;max-width:700px;height:200px"></canvas>
-
-            <script>
-            var xValues = {{ round_nums }};
-
-            new Chart("localChart", {
-              type: "line",
-              data: {
-                labels: xValues,
-                datasets: [{
-                  data: {{ local_history }},
-                  borderColor: "#e67e22",
-                  fill: false
-                },{
-                  data: {{ local_thresholds }},
-                  pointRadius: 0,
-                  borderColor: "#e67e22",
-                  borderDash: [10,10],
-                  fill: false
-                }]
-              },
-              options: {
-                legend: {display: false},
-                tooltips: {
-                     enabled: false
-                },
-                scales: {
-                    yAxes: [{
-                              scaleLabel: {
-                              display: true,
-                              labelString: 'contributors'
-                            },
-                            display: true,
-                            ticks: {
-                                beginAtZero: true,
-                                steps: 6,
-                                stepValue: 1,
-                                max: 6
-                            }
-                        }],
-                        xAxes: [{
-                              scaleLabel: {
-                              display: true,
-                              labelString: 'round'
-                            },
-                            display: true,
-                            
-                        }]
-                },
-              }
-            });
-            </script>
-
-          </div>
-
-          <div class="col-md-3">
-
-            <h4><span class="other-small-group">Eastburgh</span></h4>
-           
-
-            <canvas id="otherChart" style="width:100%;max-width:700px;height:200px"></canvas>
-
-            <script>
-            var xValues = {{ round_nums }};
-
-            new Chart("otherChart", {
-              type: "line",
-              data: {
-                labels: xValues,
-                datasets: [{
-                  data: {{ other_history }},
-                  borderColor: "#01c8ee",
-                  fill: false
-                },{
-                  data: {{ local_thresholds }},
-                  borderColor: "#01c8ee",
-                  pointRadius: 0,
-                  borderDash: [10,10],
-                  fill: false
-                }]
-              },
-              options: {
-                legend: {display: false},
-                tooltips: {
-                     enabled: false
-                },
-                scales: {
-                    yAxes: [{
-                              scaleLabel: {
-                              display: true,
-                              labelString: 'contributors'
-                            },
-                            display: true,
-                            ticks: {
-                                beginAtZero: true,
-                                steps: 6,
-                                stepValue: 1,
-                                max: 6
-                            }
-                        }],
-                        xAxes: [{
-                              scaleLabel: {
-                              display: true,
-                              labelString: 'round'
-                            },
-                            display: true,
-                            
-                        }]
-                },
-              }
-            });
-            </script>
-
-          </div>
-
-          <div class="col-md-3">
+          <div class="col-md-6">
 
 
             <h4><strong>Kept the coin</strong></h4>

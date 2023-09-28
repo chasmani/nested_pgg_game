@@ -71,8 +71,6 @@ class Player(BasePlayer):
     attention_check_1 = make_field("This is not a real question, we are just checking if you are reading the questions. Please select 'Slightly Disagree'")   
 
     expected_global = models.IntegerField(min=0, max=100, label="How many would choose Allshire? (Out of 100 people)")
-    expected_local = models.IntegerField(min=0, max=100, label="How many would choose Westville? (Out of 100 people)")
-    expected_other = models.IntegerField(min=0, max=100, label="How many would choose Eastburgh? (Out of 100 people)")
     expected_defect = models.IntegerField(min=0, max=100, label="How many would choose to keep the coin? (Out of 100 people)")
 
     DIFI_big_group_distance = models.FloatField(min=-200)
@@ -110,12 +108,12 @@ class GroupIdentity(Page):
 class ExpectedActions(Page):
 
     form_model = 'player'
-    form_fields = ['expected_global', 'expected_local', 'expected_other', 'expected_defect']
+    form_fields = ['expected_global', 'expected_defect']
 
     @staticmethod
     def error_message(player, values):
         print('values is', values)
-        if values['expected_global'] + values['expected_local'] + values['expected_other'] + values['expected_defect'] != 100:
+        if values['expected_global'] +  values['expected_defect'] != 100:
             return 'The numbers must add up to 100'
 
 

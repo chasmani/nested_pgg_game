@@ -44,27 +44,22 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect)
 
     quiz_3_allshire_threshold = models.IntegerField(
-        label = "At least how many players need to choose Allshire to earn the Allshire bonus?",
+        label = "At least how many players need to choose Allshire to earn the bonus?",
         )
 
     quiz_3_all_players_allshire_bonus = models.BooleanField(
-        label = "Do all players get the Allshire bonus if the Allshire target is met?",
+        label = "Do all players get the bonus if the Allshire target is met?",
         widget=widgets.RadioSelect
         )
 
     quiz_3_keep_coin = models.BooleanField(
-        label = "If you choose to keep the coin, can you still earn the bonus if the other players meet the target?",
+        label = "If you choose to keep the coin, can you still earn the bonus if the other players meet the Allshire target?",
         widget=widgets.RadioSelect
         )
 
 
     scenario_1_allshire_meet_target = models.BooleanField(
         label = "Did the group meet the Allshire target?",
-        widget = widgets.RadioSelect
-        )
-
-    scenario_1_westville_meet_target = models.BooleanField(
-        label = "Did Westville meet the target?",
         widget = widgets.RadioSelect
         )
 
@@ -171,7 +166,6 @@ class Scenario1(Page):
     form_model = 'player'
     form_fields = [
         'scenario_1_allshire_meet_target',
-        'scenario_1_westville_meet_target',
         'scenario_1_how_many_coins',
         ]
 
@@ -181,9 +175,7 @@ class Scenario1(Page):
         errors = []
         if values['scenario_1_allshire_meet_target'] != False:
             errors.append('scenario_1_allshire_meet_target')
-        if values['scenario_1_westville_meet_target'] != True:
-            errors.append('scenario_1_westville_meet_target')
-        if values['scenario_1_how_many_coins'] != gameConstants.LOCAL_REWARD + 1:
+        if values['scenario_1_how_many_coins'] != 1:
             errors.append('scenario_1_how_many_coins')
 
         if len(errors) > 0:

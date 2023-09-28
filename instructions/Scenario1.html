@@ -32,7 +32,7 @@
 
       <h3>Scenario 1</h3>
 
-      <p>In this scenario you decide to keep the coin. The other 2 <span class="my-small-group">Westville</span> players invest in <span class="my-small-group">Westville</span>. One of the <span class="other-small-group">Eastburgh</span> players invests in <span class="my-small-group">Westville</span>, and the other two invest in <span class="other-small-group">Eastburgh</span>. 
+      <p>In this scenario you decide to keep the coin. The other 2 <span class="my-small-group">Westville</span> players invest in <span class="big-group">Allshire</span>. One of the <span class="other-small-group">Eastburgh</span> players invests in <span class="big-group">Allshire</span>, and the other two keep the coin. 
       </p>
     </div>
       <div class="col-6 col-md-3 offset-md-3">
@@ -40,17 +40,17 @@
         <h4><span class="my-small-group">Westville</span> Players</h4>
         <ul>
           <li>"Keep the coin" (You)</li>
-          <li>"Invest in <span class="my-small-group">Westville</span>"</li>
-          <li>"Invest in <span class="my-small-group">Westville</span>"</li>
+          <li>"Invest in <span class="big-group">Allshire</span>"</li>
+          <li>"Invest in <span class="big-group">Allshire</span>"</li>
         </ul>
 
       </div>
       <div class="col-6 col-md-3" >
         <h4><span class="other-small-group">Eastburgh</span> Players</h4>
         <ul>
-          <li>"Invest in <span class="my-small-group">Westville</span>"</li>
-          <li>"Invest in <span class="other-small-group">Eastburgh</span>"</li>        
-          <li>"Invest in <span class="other-small-group">Eastburgh</span>"</li>
+          <li>"Invest in <span class="big-group">Allshire</span>"</li>
+          <li>"Keep the coin"</li>        
+          <li>"Keep the coin"</li>
         </ul>
       </div>
     
@@ -75,9 +75,9 @@
       <td>+ {{ gameConstants.GLOBAL_REWARD }} coins for ALL players</td>
       
       <td>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
+        <span class="dot bg-big-group"></span>
+        <span class="dot bg-big-group"></span>
+        <span class="dot bg-big-group"></span>
         <span class="dot bg-empty"></span>
         <span class="target-line bg-big-group"></span>
         <span class="dot bg-empty"></span>
@@ -85,40 +85,6 @@
         </td>
         <td><i class="glyphicon glyphicon-remove"></i>+ 0 coins
   </td>
-      
-  
-    </tr>
-    <tr class="my-small-group">
-      <td><span class="my-small-group">Westville</span></td>
-      <td>At least 2 players</td>
-      <td>+ {{ gameConstants.LOCAL_REWARD }} coins for ALL <span class="my-small-group">Westville</span> players</td>
-      <td>
-        <span class="dot bg-my-small-group"></span>
-        <span class="dot bg-my-small-group"></span>
-        <span class="target-line bg-my-small-group"></span>
-        <span class="dot bg-my-small-group"></span>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
-      </td>
-      <td><i class="glyphicon glyphicon-ok"></i> + {{ gameConstants.LOCAL_REWARD }} coins </td> 
-      
-    </tr>
-
-    <tr class="other-small-group">
-      <td><span class="other-small-group">Eastburgh</span></td>
-      <td>At least 2 players</td>
-      <td>+ {{ gameConstants.LOCAL_REWARD }} coins for ALL <span class="other-small-group">Eastburgh</span> players</td>
-      <td>
-        <span class="dot bg-other-small-group"></span>
-        <span class="dot bg-other-small-group"></span>
-        <span class="target-line bg-my-small-group"></span>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
-        <span class="dot bg-empty"></span>
-      </td>
-      <td><i class="glyphicon glyphicon-ok"></i> + 0 coins for YOU (only Eastburgh players) </td> 
       
     </tr>
 
@@ -136,7 +102,7 @@
       <td></td>
       <td></td>
       <td></td>
-      <td><strong>3 coins<strong></td>
+      <td><strong>1 coin<strong></td>
     </tr>
   </tbody>
 </table>

@@ -49,8 +49,6 @@ class Player(BasePlayer):
     attention_check_1 = make_field("This is not a real question, we are just checking if you are reading the questions. Please select 'Slightly Agree'")       
 
     survey_strategy_1 = make_field("I wanted to make Allshire meet the target.")
-    survey_strategy_2 = make_field("I wanted to make Westville meet the target.")
-    survey_strategy_3 = make_field("I wanted to make Eastburgh meet the target.")
     survey_strategy_4 = make_field("I wanted to maximise my own winnings.")
     survey_strategy_5 = make_field("I wanted the entire group to do well.")
     survey_strategy_6 = make_field("I wanted to get more coins that anyone else.")
@@ -85,8 +83,6 @@ class SurveyStrategy(Page):
     form_model = 'player'
     form_fields = [
         'survey_strategy_1',
-        'survey_strategy_2',
-        'survey_strategy_3',
         'survey_strategy_4',
         'survey_strategy_5',
         'survey_strategy_6',

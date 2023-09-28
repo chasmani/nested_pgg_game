@@ -73,8 +73,6 @@ class Player(BasePlayer):
         label="You are given 1 coin, what would you like to do?",
         choices=[
             ['global', 'Invest in Allshire'],
-            ['local', 'Invest in Westville'],
-            ['other', 'Invest in Eastburgh'],
             ['self', 'Keep the coin'],
         ],
         widget=widgets.RadioSelect,
@@ -238,14 +236,13 @@ def get_results(group):
     # Simulate actions for any players who have dropped out/missing actions. 
     # Get group totals so far. Add one to all of them in case they are zero
     total_global = sum(players[0].participant.global_group_history) + 1 
-    total_local = sum(players[0].participant.local_group_history) + sum(players[0].participant.other_group_history) + 1
     total_kept = sum(players[0].participant.kept_group_history) + 1
-    total_all = total_global + total_local + total_kept
-    actions_probs = [total_global/total_all, total_local/total_all, total_kept/total_all]
+    total_all = total_global + total_kept
+    actions_probs = [total_global/total_all, total_kept/total_all]
     all_actions = []
     for action in actions:
         if action == "":
-            action = np.random.choice(["global", "local", "self"], p=actions_probs)
+            action = np.random.choice(["global", "self"], p=actions_probs)
         all_actions.append(action)
 
     print("ACTIONS ARE ", all_actions)

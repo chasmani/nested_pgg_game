@@ -43,48 +43,20 @@ class Player(BasePlayer):
         choices=["Westville and Eastburgh", "Westville and Allshire", "Only Westville", "Only Allshire"],
         widget=widgets.RadioSelect)
 
-
-    quiz_3_which_choices = models.StringField(
-        label = "Which choices do you have each round?",
-        choices=[
-            "a) Invest in Westville b) Keep the coin",
-            "a) Invest in Allshire b) Invest in Westville c) keep the coin",
-            "a) Invest in Allshire b) invest in Westville c) Invest in Eastburgh d) Keep the coin"],
-            widget=widgets.RadioSelect
-        )
-
     quiz_3_allshire_threshold = models.IntegerField(
         label = "At least how many players need to choose Allshire to earn the Allshire bonus?",
         )
 
-    quiz_3_westville_threshold = models.IntegerField(
-        label = "At least how many players need to choose Westville to earn the Westville bonus?",
-        )    
-
-    quiz_3_westville_bonus_who = models.StringField(
-        label = "If 2 players invest in Westville, who gets the Westville bonus?",
-        choices=[
-            "Nobody",
-            "The 2 investors",
-            "All 3 Westville players",
-            "All 6 players in Allshire"],
-        widget=widgets.RadioSelect
-        )
-
     quiz_3_all_players_allshire_bonus = models.BooleanField(
-        label = "Do all players get the Allshire bonus if the Allshire target is met.",
+        label = "Do all players get the Allshire bonus if the Allshire target is met?",
         widget=widgets.RadioSelect
         )
 
     quiz_3_keep_coin = models.BooleanField(
-        label = "If you choose to keep the coin, can you still earn other bonuses if the other players meet the targets.",
+        label = "If you choose to keep the coin, can you still earn the bonus if the other players meet the target?",
         widget=widgets.RadioSelect
         )
 
-    quiz_3_eastburgh_bonus = models.BooleanField(
-        label = "As a Westville player. Do you earn any bonus if the Eastburgh target is met? ",
-        widget=widgets.RadioSelect
-        )
 
     scenario_1_allshire_meet_target = models.BooleanField(
         label = "Did the group meet the Allshire target?",
@@ -168,11 +140,8 @@ class Instructions3(Page):
     form_model = 'player'
     form_fields = [
         'quiz_3_allshire_threshold',
-        'quiz_3_westville_threshold',
-        'quiz_3_westville_bonus_who',
         'quiz_3_all_players_allshire_bonus',
         'quiz_3_keep_coin',
-        'quiz_3_eastburgh_bonus'
         ]
 
     @staticmethod
@@ -181,10 +150,6 @@ class Instructions3(Page):
         errors = []
         if values['quiz_3_allshire_threshold'] != 4:
             errors.append('quiz_3_allshire_threshold')
-        if values['quiz_3_westville_threshold'] != 2:
-            errors.append('quiz_3_westville_threshold')
-        if values['quiz_3_westville_bonus_who'] != "All 3 Westville players":
-            errors.append('quiz_3_westville_bonus_who')
         if values['quiz_3_all_players_allshire_bonus'] != True:
             errors.append('quiz_3_all_players_allshire_bonus')
         if values['quiz_3_keep_coin'] != True:
